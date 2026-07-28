@@ -122,8 +122,8 @@ function Home({favoriteMovies,toggleFavorite}) {
         const savedSearch = localStorage.getItem("searchMovie");
         const savedResults = localStorage.getItem("searchResults")
 
-        setSearchMovie(savedSearch);
-        setSearchMovies(JSON.parse(savedResults));
+        setSearchMovie(savedSearch ||"");
+        setSearchMovies(savedResults ? JSON.parse(savedResults) : [])
 
     },[])
 
